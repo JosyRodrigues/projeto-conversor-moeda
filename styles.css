@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*font-family: "Roboto", sans-serif;*/
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  line-height: 18px;
+}
+body {
+  background: #e5e5e5;
+  /*background: linear-gradient(90deg,#cbe5eb,#61d8e8, #4da3b8) #37393a;;*/
+  /*background: #000000;*/
+  
+}
+.container {
+  width: 375px;
+  background: #f4f4f4;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  /*box-shadow: 5px 5px 10px 10px rgba(229, 229, 229, 0.25);*/
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
+  /*box-shadow: 0 0 15px 15px rgba(180, 114, 9, 0.25)*/
+  
+  
+}
+header {
+  height: 66px;
+  /*background: #1b83e2;*/
+  background: #B47209;
+
+}
+
+h1 {
+  padding-top: 24px;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  color: rgba(244, 244, 244, 1);
+}
+
+main {
+  padding: 24px;
+}
+
+label {
+  font-weight: 400;
+  font-size: 16px;
+  color: #777777;
+}
+
+select {
+  width: 100%; /* ou 327px; */
+  height: 48px;
+  padding-left: 16px;
+  margin-top: 6px;
+  margin-bottom: 23px;
+  background: #ffffff;
+  border: 1px solid #bbbbbb;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  outline: none;
+  font-size: 20px;
+}
+
+option {
+  font-weight: 400;
+  font-size: 18px;
+  color: #777777;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  height: 48px;
+  padding-left: 16px;
+  margin-top: 4px;
+  background: #ffffff;
+  border: 1px solid #bbbbbb;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-size: 20px;
+  
+}
+
+button {
+  width: 100%; /* ou 327px; */
+  height: 48px;
+  margin-top: 24px;
+  background: #B47209;
+  border-radius: 25px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: #f4f4f4;
+  cursor: pointer;
+  margin-bottom: 36px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  opacity: 0.7;
+}
+
+section {
+  height: 276px;
+  border: 1px solid #B47209/*#1b83e2*/;
+  border-radius: 4px;
+}
+
+.currency-container{
+  text-align: center;
+  padding: 10px;
+}
+
+.name {
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: #777777;
+}
+.value {
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  color: #1b83e2;
+  margin-top: 2px;
+}
+
+.arrow {
+  display: block;
+  margin: 7px auto;
+}
