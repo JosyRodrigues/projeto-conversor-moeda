@@ -3,10 +3,10 @@ const selectIn = document.getElementById('currency-select-in')
 const select = document.getElementById('currency-select-convert')
 
 
-const dolar = 5.29
+const dolar = 5.34
 const euro = 5.13
 const real = 0.19
-const bitcoin = 0.0000099
+const bitcoin = 0.000010
 
 
 const convertValue = () => {
@@ -76,7 +76,7 @@ const convertValue = () => {
         currencyNew.innerHTML = new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
-        }).format(input * 5.29)
+        }).format(input * 5.34)
 
     }
     if (selectIn.value === "US$ Dólar Americano" && select.value === "€ Euro") {
@@ -90,14 +90,14 @@ const convertValue = () => {
         currencyNew.innerHTML = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "BTC",
-        }).format(input * 0.000052)
+        }).format(input * 0.000055)
 
     }
     if (selectIn.value === "€ Euro" && select.value === "R$ Real Brasileiro") {
         currencyNew.innerHTML = new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
-        }).format(input * 5.13)
+        }).format(input * 5.16)
 
     }
     if (selectIn.value === "€ Euro" && select.value === "US$ Dólar Americano") {
@@ -111,28 +111,28 @@ const convertValue = () => {
         currencyNew.innerHTML = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "BTC",
-        }).format(input * 0.000051)
+        }).format(input * 0.000053)
 
     }
     if (selectIn.value === "₿ Bitcoin" && select.value === "R$ Real Brasileiro") {
         currencyNew.innerHTML = new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
-        }).format(input * 101245.60)
+        }).format(input * 98040.76)
 
     }
     if (selectIn.value === "₿ Bitcoin" && select.value === "US$ Dólar Americano") {
         currencyNew.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD",
-        }).format(input * 19126.40)
+        }).format(input * 18333.60)
 
     }
     if (selectIn.value === "₿ Bitcoin" && select.value === "€ Euro") {
         currencyNew.innerHTML = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "EUR",
-        }).format(input * 19741.60)
+        }).format(input * 18994.16)
 
     }
     else if (selectIn.value === select.value) {
