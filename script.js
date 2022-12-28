@@ -14,7 +14,7 @@ const convertValue = async () => {
     const currencyConvert = document.getElementById('currency-convert')
     const currencyNew = document.getElementById('currency-new')
 
-    const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.jsson())
+    const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.json())
     const dolar = data.USDBRL.high
     const euro = data.EURBRL.high
     const bitcoin = data.BTCBRL
