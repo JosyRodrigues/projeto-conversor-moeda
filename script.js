@@ -3,19 +3,23 @@ const selectIn = document.getElementById('currency-select-in')
 const select = document.getElementById('currency-select-convert')
 
 
-const dolar = 5.34
-const euro = 5.13
-const real = 0.19
-const bitcoin = 0.000010
+//const dolar = 5.34
+//const euro = 5.13
+//const real = 0.19
+//const bitcoin = 0.000010
 
 
-const convertValue = () => {
+const convertValue = async () => {
     const input = document.getElementById('input-number').value
     const currencyConvert = document.getElementById('currency-convert')
     const currencyNew = document.getElementById('currency-new')
 
-    //currencyConvert.innerHTML = input - forma simples
+    const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.jsson())
+    const dolar = data.USDBRL.high
+    const euro = data.EURBRL.high
+    const bitcoin = data.BTCBRL
 
+    //currencyConvert.innerHTML = input - forma simples
     if (selectIn.value === "US$ Dólar Americano") {
         currencyConvert.innerHTML = new Intl.NumberFormat("en-US", { //formataçãopra mostrar o valor e sigla
             style: "currency",
@@ -76,67 +80,66 @@ const convertValue = () => {
         currencyNew.innerHTML = new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
-        }).format(input * 5.34)
+        }).format(input * dolar)
 
     }
     if (selectIn.value === "US$ Dólar Americano" && select.value === "€ Euro") {
         currencyNew.innerHTML = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "EUR",
-        }).format(input * 1.03)
+        }).format(input * dolar)
 
     }
     if (selectIn.value === "US$ Dólar Americano" && select.value === "₿ Bitcoin") {
         currencyNew.innerHTML = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "BTC",
-        }).format(input * 0.000055)
+        }).format(input * dolar)
 
     }
     if (selectIn.value === "€ Euro" && select.value === "R$ Real Brasileiro") {
         currencyNew.innerHTML = new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
-        }).format(input * 5.16)
+        }).format(input * euro)
 
     }
     if (selectIn.value === "€ Euro" && select.value === "US$ Dólar Americano") {
         currencyNew.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD",
-        }).format(input * 0.97)
+        }).format(input * euro)
 
     }
     if (selectIn.value === "€ Euro" && select.value === "₿ Bitcoin") {
         currencyNew.innerHTML = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "BTC",
-        }).format(input * 0.000053)
-
+        }).format(input * euro)
     }
     if (selectIn.value === "₿ Bitcoin" && select.value === "R$ Real Brasileiro") {
         currencyNew.innerHTML = new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
-        }).format(input * 98040.76)
+        }).format(input * bitcoin)
 
     }
     if (selectIn.value === "₿ Bitcoin" && select.value === "US$ Dólar Americano") {
         currencyNew.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD",
-        }).format(input * 18333.60)
+        }).format(input * bitcoin)
 
     }
     if (selectIn.value === "₿ Bitcoin" && select.value === "€ Euro") {
         currencyNew.innerHTML = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "EUR",
-        }).format(input * 18994.16)
-
+        }).format(input * bitcoin)
     }
     else if (selectIn.value === select.value) {
-        alert('As moedas Não podem ser iguais')}
+        alert('As moedas Não podem ser iguais')
+    }
 }
 
 changeCurrencyIn = () => {//para alterar a imagem e o nome de acordo a opção escolhida
